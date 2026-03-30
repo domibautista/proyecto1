@@ -3,13 +3,20 @@
     const contenedorCarrito = document.querySelector('#lista-carrito tbody');
     const listaCursos = document.querySelector('#lista-cursos');
     const botonAgregar = document.querySelectorAll('.agregar-carrito');
+    const vaciarCarritoBtn = document.querySelector('#vaciar-carrito');
     let articulosCarrito = [];
     
     cargarEventListener();
     function cargarEventListener() {
         listaCursos.addEventListener('click', agregarCurso);
 
-        carrito.addEventListener('click', borrarCurso)
+        carrito.addEventListener('click', borrarCurso);
+
+        vaciarCarritoBtn.addEventListener('click', () => {
+            articulosCarrito = [];
+
+            limpiarHTML();
+        });
     }
 
 
